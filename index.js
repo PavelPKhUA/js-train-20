@@ -246,6 +246,9 @@ function ElectricCar(
   this.batteryCapacity = batteryCapacity
 }
 
+ElectricCar.prototype = Object.create(Car.prototype) // не було в умові
+ElectricCar.prototype.constructor = ElectricCar
+
 // Перевизначаємо toString для прототипу ElectricCar він має повертати <brand> <model> <year> - Батарея: <batteryCapacity> kWh
 ElectricCar.prototype.toString = function () {
   return `${this.brand} ${this.model} ${this.year} - Батарея: ${this.batteryCapacity} kWh`
